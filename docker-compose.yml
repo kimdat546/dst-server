@@ -2,30 +2,19 @@ version: '3'
 
 services:
   dst-server:
-    image: jamesits/dst-server:latest
+    image: jamesits/dst-server:nightly
     container_name: dst-server
     restart: unless-stopped
-    
-    ports:
-      - "10999:10999/udp"  # Master server port
-      - "11000:11000/udp"  # Caves port
-      - "12346:12346/udp"  # Steam port 1
-      - "12347:12347/udp"  # Steam port 2
+    network_mode: host
     
     environment:
-      # Server Architecture
       - DST_SERVER_ARCH=amd64
-      
-      # Cluster Token (sẽ set qua Coolify UI)
       - DST_CLUSTER_TOKEN=${CLUSTER_TOKEN}
     
     volumes:
-      # Persistent data storage
       - dst_data:/data
     
-    # Graceful shutdown (quan trọng để save game)
     stop_grace_period: 5m
 
 volumes:
   dst_data:
-    driver: local
