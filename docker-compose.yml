@@ -2,17 +2,25 @@ version: '3'
 
 services:
   dst-server:
-    image: jamesits/dst-server:nightly
+    image: webhippie/dst:latest
     container_name: dst-server
     restart: unless-stopped
     network_mode: host
     
     environment:
-      - DST_SERVER_ARCH=amd64
-      - DST_CLUSTER_TOKEN=${CLUSTER_TOKEN}
+      - DST_CLUSTER_TOKEN=${DST_CLUSTER_TOKEN}
+      - DST_NETWORK_CLUSTER_NAME=${DST_NETWORK_CLUSTER_NAME}
+      - DST_NETWORK_CLUSTER_DESCRIPTION=${DST_NETWORK_CLUSTER_DESCRIPTION}
+      - DST_GAMEPLAY_MAX_PLAYERS=${DST_GAMEPLAY_MAX_PLAYERS}
+      - DST_GAMEPLAY_GAME_MODE=${DST_GAMEPLAY_GAME_MODE}
+      - DST_NETWORK_TICK_RATE=${DST_NETWORK_TICK_RATE}
+      - DST_NETWORK_CLUSTER_PASSWORD=${DST_NETWORK_CLUSTER_PASSWORD}
+      - DST_MISC_CONSOLE_ENABLED=${DST_MISC_CONSOLE_ENABLED}
     
     volumes:
-      - dst_data:/data
+      - dst_data:/var/lib/game
+      - ./config/dedicated_server_mods_setup.lua:/usr/share/game/mods/dedicated_server_mods_setup.lua:ro
+      - ./config/modoverrides.lua:/var/lib/game/server/general/Master/modoverrides.lua:ro
     
     stop_grace_period: 5m
 
