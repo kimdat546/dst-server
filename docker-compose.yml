@@ -3,50 +3,88 @@ version: '3.8'
 services:
   dst-master:
     image: webhippie/dst:latest
-    container_name: dst-master-test  # ← Tên khác
+    container_name: dst-master
     restart: unless-stopped
     network_mode: host
     environment:
+      # Token
       DST_CLUSTER_TOKEN: ${DST_CLUSTER_TOKEN}
-      DST_NETWORK_CLUSTER_NAME: ${DST_CLUSTER_NAME:-haizz club test}
+      
+      # Server settings
+      DST_NETWORK_CLUSTER_NAME: ${DST_CLUSTER_NAME:-haizz club}
       DST_NETWORK_CLUSTER_PASSWORD: ${DST_CLUSTER_PASSWORD:-haizz}
       DST_GAMEPLAY_MAX_PLAYERS: ${DST_MAX_PLAYERS:-30}
+      DST_GAMEPLAY_GAME_MODE: endless  # ← Endless mode
       DST_NETWORK_TICK_RATE: ${DST_TICK_RATE:-30}
+      DST_MISC_CONSOLE_ENABLED: "true"
+      
+      # Shard settings
       DST_SHARD_ENABLED: "true"
       DST_SHARD_IS_MASTER: "true"
       DST_SHARD_NAME: "Master"
       DST_SHARD_BIND_IP: "127.0.0.1"
-      DST_SHARD_MASTER_PORT: "10888"
+      DST_SHARD_MASTER_PORT: ${DST_SHARD_PORT:-10888}
       DST_SHARD_CLUSTER_KEY: ${DST_SHARD_KEY:-haizzclub2025}
-      DST_NETWORK_SERVER_PORT: "10999"
-      DST_STEAM_AUTHENTICATION_PORT: "8766"
-      DST_STEAM_MASTER_SERVER_PORT: "27016"
+      
+      # Ports
+      DST_NETWORK_SERVER_PORT: ${DST_MASTER_PORT:-10999}
+      DST_STEAM_AUTHENTICATION_PORT: ${DST_MASTER_STEAM_AUTH:-8766}
+      DST_STEAM_MASTER_SERVER_PORT: ${DST_MASTER_STEAM_MASTER:-27016}
+    
     volumes:
-      - dst_master_data_test:/var/lib/game  # ← Volume mới
+      - dst_master_data:/var/lib/game
+      
+      # Mount mods từ repo (sẽ thêm sau khi copy từ local)
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1852257480:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-786556008:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-375850593:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-374550642:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-380423963:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-501385076:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-666155465:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1207269058:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-362175979:ro
 
   dst-caves:
     image: webhippie/dst:latest
-    container_name: dst-caves-test  # ← Tên khác
+    container_name: dst-caves
     restart: unless-stopped
     network_mode: host
     depends_on:
       - dst-master
     environment:
       DST_CLUSTER_TOKEN: ${DST_CLUSTER_TOKEN}
+      
+      DST_GAMEPLAY_GAME_MODE: endless  # ← Endless mode
+      DST_GAMEPLAY_MAX_PLAYERS: ${DST_MAX_PLAYERS:-30}
+      
       DST_SHARD_ENABLED: "true"
       DST_SHARD_IS_MASTER: "false"
       DST_SHARD_NAME: "Caves"
       DST_SHARD_MASTER_IP: "127.0.0.1"
-      DST_SHARD_MASTER_PORT: "10888"
+      DST_SHARD_MASTER_PORT: ${DST_SHARD_PORT:-10888}
       DST_SHARD_CLUSTER_KEY: ${DST_SHARD_KEY:-haizzclub2025}
-      DST_NETWORK_SERVER_PORT: "11000"
-      DST_STEAM_AUTHENTICATION_PORT: "8767"
-      DST_STEAM_MASTER_SERVER_PORT: "27017"
+      
+      DST_NETWORK_SERVER_PORT: ${DST_CAVES_PORT:-11000}
+      DST_STEAM_AUTHENTICATION_PORT: ${DST_CAVES_STEAM_AUTH:-8767}
+      DST_STEAM_MASTER_SERVER_PORT: ${DST_CAVES_STEAM_MASTER:-27017}
+    
     volumes:
-      - dst_caves_data_test:/var/lib/game  # ← Volume mới
+      - dst_caves_data:/var/lib/game
+      
+      # Mount mods (same as master)
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1852257480:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-786556008:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-375850593:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-374550642:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-380423963:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-501385076:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-666155465:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1207269058:ro
+      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-362175979:ro
 
 volumes:
-  dst_master_data_test:  # ← Volume mới
+  dst_master_data:
     driver: local
-  dst_caves_data_test:   # ← Volume mới
+  dst_caves_data:
     driver: local
