@@ -33,17 +33,6 @@ services:
     
     volumes:
       - dst_master_data:/var/lib/game
-      
-      # Mount mods từ repo (sẽ thêm sau khi copy từ local)
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1852257480:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-786556008:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-375850593:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-374550642:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-380423963:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-501385076:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-666155465:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1207269058:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-362175979:ro
 
   dst-caves:
     image: webhippie/dst:latest
@@ -71,17 +60,6 @@ services:
     
     volumes:
       - dst_caves_data:/var/lib/game
-      
-      # Mount mods (same as master)
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1852257480:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-786556008:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-375850593:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-374550642:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-380423963:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-501385076:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-666155465:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1207269058:ro
-      - ./mods/workshop-380423963:/usr/share/game/mods/workshop-362175979:ro
 
 volumes:
   dst_master_data:
