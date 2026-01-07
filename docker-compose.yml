@@ -33,6 +33,10 @@ services:
     
     volumes:
       - dst_master_data:/var/lib/game
+
+      # Mount ONLY world & mod configs (KHÔNG mount cluster.ini, server.ini)
+      - ./server-config/Master/leveldataoverride.lua:/var/lib/game/server/general/Master/leveldataoverride.lua:ro
+      - ./server-config/Master/modoverrides.lua:/var/lib/game/server/general/Master/modoverrides.lua:ro
       
       # Mount mods từ repo (sẽ thêm sau khi copy từ local)
       - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1852257480:ro
@@ -71,6 +75,10 @@ services:
     
     volumes:
       - dst_caves_data:/var/lib/game
+
+      # Mount ONLY world & mod configs
+      - ./server-config/Caves/leveldataoverride.lua:/var/lib/game/server/general/Caves/leveldataoverride.lua:ro
+      - ./server-config/Caves/modoverrides.lua:/var/lib/game/server/general/Caves/modoverrides.lua:ro
       
       # Mount mods (same as master)
       - ./mods/workshop-380423963:/usr/share/game/mods/workshop-1852257480:ro
