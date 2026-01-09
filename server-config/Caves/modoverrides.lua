@@ -1,10 +1,4 @@
 return {
-  ["workshop-1207269058"]={ configuration_options={  }, enabled=true },
-  ["workshop-1852257480"]={
-    configuration_options={ horizontal=0, info=false, position="bottom", vertical="auto" },
-    enabled=true 
-  },
-  ["workshop-362175979"]={ configuration_options={ ["Draw over FoW"]="disabled" }, enabled=true },
   ["workshop-374550642"]={
     configuration_options={
       STACK_SIZE_LARGEITEM=99,
@@ -78,10 +72,6 @@ return {
     },
     enabled=true 
   },
-  ["workshop-661253977"]={
-    configuration_options={ amudiao=true, baodiao=1, kong=0, nillots=0, rendiao=2, zbdiao=true },
-    enabled=true 
-  },
   ["workshop-666155465"]={
     configuration_options={
       chestB=-1,
@@ -98,7 +88,7 @@ return {
     enabled=true 
   },
   ["workshop-786556008"]={
-    configuration_options={ ENABLEBACKPACK=false, EXTRASLOT=0, INVENTORYSIZE=45 },
+    configuration_options={ ENABLEBACKPACK=false, EXTRASLOT=0, INVENTORYSIZE=25 },
     enabled=true 
   } 
 }
