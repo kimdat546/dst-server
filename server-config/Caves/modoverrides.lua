@@ -1,10 +1,60 @@
 return {
   ["workshop-1207269058"]={ configuration_options={  }, enabled=true },
+  ["workshop-1530801499"]={
+    configuration_options={
+      ArrowsignEnable=false,
+      CountdownEnable=false,
+      HungerCost=1,
+      Ownership=true,
+      SanityCost=1 
+    },
+    enabled=true 
+  },
+  ["workshop-1803285852"]={
+    configuration_options={
+      [""]=0,
+      AutoPickupAsh=false,
+      AutoPickupEnabled=false,
+      AutoPickupPoop=false,
+      AutoPickupRange=10,
+      AutoPickupSeeds=false,
+      AutoStackAsh=false,
+      AutoStackEnabled=true,
+      AutoStackMakeNewStackMainStack=false,
+      AutoStackManuallyDroppedItems=true,
+      AutoStackPoop=false,
+      AutoStackRange=10,
+      AutoStackSeeds=false,
+      AutoStackTwiggyTreeTwigs=false,
+      ManualDropStackRange=5,
+      ManualStackAsh=false,
+      ManualStackMakeNewStackMainStack=false,
+      ManualStackPoop=false,
+      ManualStackSeeds=false,
+      PlayerMustHaveOneOfItemToAutoPickup=false,
+      SmokePuffOnStacking=true,
+      StackDuringPopulation=false 
+    },
+    enabled=true 
+  },
   ["workshop-1852257480"]={
     configuration_options={ horizontal=0, info=false, position="bottom", vertical="auto" },
     enabled=true 
   },
-  ["workshop-362175979"]={ configuration_options={ ["Draw over FoW"]="disabled" }, enabled=true },
+  ["workshop-1951468597"]={
+    configuration_options={
+      CanSpawnSpore=true,
+      HouseHammered=true,
+      NewInteriors=true,
+      NewWalls=true,
+      Tardis=true 
+    },
+    enabled=true 
+  },
+  ["workshop-2078243581"]={
+    configuration_options={ Blue=0, Display="target", Green=0, Projectile=true, Red=1, Type="hit" },
+    enabled=true 
+  },
   ["workshop-374550642"]={
     configuration_options={
       STACK_SIZE_LARGEITEM=99,
@@ -25,6 +75,18 @@ return {
       show_type=0,
       unknwon_prefabs=1,
       use_blacklist=true 
+    },
+    enabled=true 
+  },
+  ["workshop-378160973"]={
+    configuration_options={
+      ENABLEPINGS=true,
+      FIREOPTIONS=2,
+      OVERRIDEMODE=false,
+      SHAREMINIMAPPROGRESS=true,
+      SHOWFIREICONS=true,
+      SHOWPLAYERICONS=true,
+      SHOWPLAYERSOPTIONS=2 
     },
     enabled=true 
   },
@@ -78,8 +140,26 @@ return {
     },
     enabled=true 
   },
-  ["workshop-661253977"]={
-    configuration_options={ amudiao=true, baodiao=1, kong=0, nillots=0, rendiao=2, zbdiao=true },
+  ["workshop-604761020"]={
+    configuration_options={
+      baoshibaolv=1,
+      blue_baoshi=1,
+      er_shuoming=0,
+      green_baoshi=1,
+      huangjinbaolv=1,
+      marble_suipian=1,
+      orange_baoshi=1,
+      purple_baoshi=1,
+      red_baoshi=1,
+      RUOYINXIAN=false,
+      SHENGDANSHI=false,
+      shishengzhang=0,
+      shitoubaolv=1,
+      thulecite_xiukuang=1,
+      wajuecishu=2,
+      yellow_baoshi=1,
+      yi_shuoming=0 
+    },
     enabled=true 
   },
   ["workshop-666155465"]={
@@ -98,7 +178,57 @@ return {
     enabled=true 
   },
   ["workshop-786556008"]={
-    configuration_options={ ENABLEBACKPACK=false, EXTRASLOT=0, INVENTORYSIZE=45 },
+    configuration_options={ ENABLEBACKPACK=false, EXTRASLOT=0, INVENTORYSIZE=25 },
+    enabled=true 
+  },
+  ["workshop-791838548"]={
+    configuration_options={
+      Building_SD=33,
+      building_upgradeable="y",
+      buildinglimit=true,
+      Buildings=0,
+      Dispenser=0,
+      Dispenser_Difficulty="default",
+      dispenseramount=4,
+      dispenserhealingrate=3,
+      dispenserlimit=true,
+      disprange=3,
+      ehardhatdura=295,
+      EHat_Difficulty="default",
+      engiedmgdebuff=0.8,
+      engiesciencebonus=1,
+      engineer_health=125,
+      engineer_hunger=150,
+      engineer_sanity=200,
+      eteleport_penalty=5,
+      hardhatabsorb=0.7,
+      pda_Difficulty="default",
+      pda_ingredientpercent=0.9,
+      Scrap_Difficulty="default",
+      ["Sentry Gun"]=0,
+      Sentry_Damage=10,
+      Sentry_Difficulty="default",
+      sentry_ff="noff",
+      sentry_ff_wall="noff",
+      sentry_healinghit=10,
+      Sentry_Health=200,
+      Sentry_Range=13,
+      Sentry_ROF=1,
+      sentryamount=4,
+      sentryh_regen="n",
+      sentrylimit=true,
+      starting_scrap="y",
+      Teleporter_Difficulty="default",
+      teleporteramount=4,
+      teleporterlimit=true,
+      Teleporters=0,
+      tf2Wrench_Difficulty="default",
+      tf2wrenchdmg=17,
+      tf2wrenchuses=150,
+      ["The Engineer"]=0,
+      toolbox_penalty=0.15,
+      Tools=0 
+    },
     enabled=true 
   } 
 }
