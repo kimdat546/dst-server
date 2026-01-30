@@ -1,4 +1,5 @@
 return {
+  ["workshop-1111658995"]={ configuration_options={  }, enabled=true },
   ["workshop-1207269058"]={ configuration_options={  }, enabled=true },
   ["workshop-1530801499"]={
     configuration_options={
@@ -41,10 +42,6 @@ return {
     configuration_options={ horizontal=0, info=false, position="bottom", vertical="auto" },
     enabled=true 
   },
-  ["workshop-2078243581"]={
-    configuration_options={ Blue=0, Display="target", Green=0, Projectile=true, Red=1, Type="hit" },
-    enabled=true 
-  },
   ["workshop-374550642"]={
     configuration_options={
       STACK_SIZE_LARGEITEM=99,
@@ -56,18 +53,6 @@ return {
     enabled=true 
   },
   ["workshop-375850593"]={ configuration_options={  }, enabled=true },
-  ["workshop-375859599"]={
-    configuration_options={
-      divider=5,
-      random_health_value=0,
-      random_range=0,
-      send_unknwon_prefabs=false,
-      show_type=0,
-      unknwon_prefabs=1,
-      use_blacklist=true 
-    },
-    enabled=true 
-  },
   ["workshop-380423963"]={
     configuration_options={
       [""]=0,
@@ -93,19 +78,19 @@ return {
       moon_orange=0.5,
       moon_yellow=0.5,
       pinecone=0,
-      rare_loot_bluegem=0.015,
-      rare_loot_marble=0.015,
-      rare_loot_redgem=0.015,
+      rare_loot_bluegem=0.3,
+      rare_loot_marble=0.3,
+      rare_loot_redgem=0.3,
       rottenegg=0,
       seeds=0,
       spoiled_food=0,
       stalagmite_green=0.5,
       stalagmite_orange=0.5,
       stalagmite_yellow=0.5,
-      uncommon_loot_goldnugget=0.05,
-      uncommon_loot_mole=0.05,
-      uncommon_loot_nitre=0.05,
-      uncommon_loot_rabbit=0.05 
+      uncommon_loot_goldnugget=0.2,
+      uncommon_loot_mole=0.2,
+      uncommon_loot_nitre=0.2,
+      uncommon_loot_rabbit=0.2 
     },
     enabled=true 
   },
@@ -115,28 +100,6 @@ return {
       quick_harvest=true,
       quick_pick_cactus=true,
       quick_pick_plant_normal_ground=true 
-    },
-    enabled=true 
-  },
-  ["workshop-604761020"]={
-    configuration_options={
-      baoshibaolv=1,
-      blue_baoshi=1,
-      er_shuoming=0,
-      green_baoshi=1,
-      huangjinbaolv=1,
-      marble_suipian=1,
-      orange_baoshi=1,
-      purple_baoshi=1,
-      red_baoshi=1,
-      RUOYINXIAN=false,
-      SHENGDANSHI=false,
-      shishengzhang=0,
-      shitoubaolv=1,
-      thulecite_xiukuang=1,
-      wajuecishu=2,
-      yellow_baoshi=1,
-      yi_shuoming=0 
     },
     enabled=true 
   },
@@ -153,10 +116,6 @@ return {
       show_food_units=-1,
       show_uses=-1 
     },
-    enabled=true 
-  },
-  ["workshop-786556008"]={
-    configuration_options={ ENABLEBACKPACK=false, EXTRASLOT=0, INVENTORYSIZE=45 },
     enabled=true 
   } 
 }
