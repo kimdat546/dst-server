@@ -2,11 +2,11 @@
 name = "Increased Stack size"
 
 --A description of the mod.
-description = "Changes the maximum size of itemstacks of all stackable items to the configured amount. (recommended value: 99)"
+description = "Changes the maximum size of itemstacks of all stackable items to the configured amount."
 
 author = "ChaosMind42"
  
-version = "1.9"
+version = "2.0"
 
 api_version = 10
 
@@ -35,7 +35,7 @@ configuration_options =
 		label = "Max stacksize for large items",
 		options =	{
 						{description = "5", data = 5},
-						{description = "10", data = 10},
+						{description = "10 (Default)", data = 10},
 						{description = "20", data = 20},
 						{description = "40", data = 40},
 						{description = "60", data = 60},
@@ -46,9 +46,7 @@ configuration_options =
 						{description = "200", data = 200},
 						{description = "250", data = 250},
 						{description = "300", data = 300},
-						{description = "350", data = 350},
 						{description = "400", data = 400},
-						{description = "450", data = 450},
 						{description = "500", data = 500},
 						{description = "600", data = 600},
 						{description = "700", data = 700},
@@ -57,7 +55,7 @@ configuration_options =
 						{description = "999", data = 999},
 					},
 
-		default = 10,
+		default = 99,
 	},
 	{
 		name = "STACK_SIZE_MEDITEM",
@@ -65,7 +63,7 @@ configuration_options =
 		options =	{
 						{description = "5", data = 5},
 						{description = "10", data = 10},
-						{description = "20", data = 20},
+						{description = "20 (Default)", data = 20},
 						{description = "40", data = 40},
 						{description = "60", data = 60},
 						{description = "80", data = 80},
@@ -75,9 +73,7 @@ configuration_options =
 						{description = "200", data = 200},
 						{description = "250", data = 250},
 						{description = "300", data = 300},
-						{description = "350", data = 350},
 						{description = "400", data = 400},
-						{description = "450", data = 450},
 						{description = "500", data = 500},
 						{description = "600", data = 600},
 						{description = "700", data = 700},
@@ -86,7 +82,7 @@ configuration_options =
 						{description = "999", data = 999},
 					},
 
-		default = 20,
+		default = 99,
 	},
 	{
 		name = "STACK_SIZE_SMALLITEM",
@@ -95,7 +91,7 @@ configuration_options =
 						{description = "5", data = 5},
 						{description = "10", data = 10},
 						{description = "20", data = 20},
-						{description = "40", data = 40},
+						{description = "40 (Default)", data = 40},
 						{description = "60", data = 60},
 						{description = "80", data = 80},
 						{description = "99", data = 99},
@@ -104,9 +100,7 @@ configuration_options =
 						{description = "200", data = 200},
 						{description = "250", data = 250},
 						{description = "300", data = 300},
-						{description = "350", data = 350},
 						{description = "400", data = 400},
-						{description = "450", data = 450},
 						{description = "500", data = 500},
 						{description = "600", data = 600},
 						{description = "700", data = 700},
@@ -115,7 +109,7 @@ configuration_options =
 						{description = "999", data = 999},
 					},
 
-		default = 40,
+		default = 99,
 	},
 	{
 		name = "STACK_SIZE_TINYITEM",
@@ -125,7 +119,7 @@ configuration_options =
 						{description = "10", data = 10},
 						{description = "20", data = 20},
 						{description = "40", data = 40},
-						{description = "60", data = 60},
+						{description = "60 (Default)", data = 60},
 						{description = "80", data = 80},
 						{description = "99", data = 99},
 						{description = "120", data = 120},
@@ -133,9 +127,7 @@ configuration_options =
 						{description = "200", data = 200},
 						{description = "250", data = 250},
 						{description = "300", data = 300},
-						{description = "350", data = 350},
 						{description = "400", data = 400},
-						{description = "450", data = 450},
 						{description = "500", data = 500},
 						{description = "600", data = 600},
 						{description = "700", data = 700},
@@ -144,7 +136,7 @@ configuration_options =
 						{description = "999", data = 999},
 					},
 
-		default = 60,
+		default = 99,
 	},
 	{
 		name = "STACK_SIZE_PELLET",
@@ -157,14 +149,12 @@ configuration_options =
 						{description = "60", data = 60},
 						{description = "80", data = 80},
 						{description = "99", data = 99},
-						{description = "120", data = 120},
+						{description = "120 (Default)", data = 120},
 						{description = "150", data = 150},
 						{description = "200", data = 200},
 						{description = "250", data = 250},
 						{description = "300", data = 300},
-						{description = "350", data = 350},
 						{description = "400", data = 400},
-						{description = "450", data = 450},
 						{description = "500", data = 500},
 						{description = "600", data = 600},
 						{description = "700", data = 700},
