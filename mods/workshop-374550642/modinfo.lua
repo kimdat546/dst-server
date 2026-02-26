@@ -6,7 +6,7 @@ description = "Changes the maximum size of itemstacks of all stackable items to 
 
 author = "ChaosMind42"
  
-version = "2.0"
+version = "2.2"
 
 api_version = 10
 
@@ -164,6 +164,17 @@ configuration_options =
 					},
 
 		default = 120,
+	},
+	{
+		name = "FORCE_STACKSIZES",
+		label = "Force overwrite stacksizes",
+		hover = "Experimental feature to make this mod more compatible(or less) with other mods depending on mod load order, use with caution",
+		options =	{
+						{description = "Deactivated", data = false},
+						{description = "Activated", data = true},
+					},
+
+		default = false,
 	},
 }
 
