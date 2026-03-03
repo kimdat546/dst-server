@@ -10,8 +10,7 @@ local function cfg(name, fallback)
     return v or fallback
 end
 
-local OLD_STACK_VALUES =
-{
+local OLD_STACK_VALUES = {
     TUNING.STACK_SIZE_LARGEITEM or 10,
     TUNING.STACK_SIZE_MEDITEM or 20,
     TUNING.STACK_SIZE_SMALLITEM or 40,
@@ -19,8 +18,7 @@ local OLD_STACK_VALUES =
     TUNING.STACK_SIZE_PELLET or 120,
 }
 
-local NEW_STACK_VALUES =
-{
+local NEW_STACK_VALUES = {
     cfg("STACK_SIZE_LARGEITEM", OLD_STACK_VALUES[1]),
     cfg("STACK_SIZE_MEDITEM", OLD_STACK_VALUES[2]),
     cfg("STACK_SIZE_SMALLITEM", OLD_STACK_VALUES[3]),
@@ -40,18 +38,29 @@ TUNING.STACK_SIZE_TINYITEM  = NEW_STACK_VALUES[4]
 TUNING.STACK_SIZE_PELLET    = NEW_STACK_VALUES[5]
 
 if forceStackSizes then
-	local function getNewStackSize(size)
+	local function getNewStackSize(size, currentStackValues)
+		if currentStackValues == nil then
+			currentStackValues = NEW_STACK_VALUES
+		end
+		if size == nil then
+			return currentStackValues[3]
+		end
 		for i,v in ipairs(OLD_STACK_VALUES) do
 			if size == v then
-				return NEW_STACK_VALUES[i]
+				return currentStackValues[i]
 			end
 		end
 		for i,v in ipairs(NEW_STACK_VALUES) do
+			if size == v then
+				return currentStackValues[i]
+			end
+		end
+		for i,v in ipairs(currentStackValues) do
 			if size <= v then
 				return v
 			end
 		end
-		return NEW_STACK_VALUES[3]
+		return currentStackValues[3]
 	end
 
 	AddPrefabPostInitAny(function(inst)
@@ -61,9 +70,20 @@ if forceStackSizes then
 		if s == nil then return end
 		
 		local currentSize = tonumber(s.maxsize)
-		if currentSize == nil then return end
 		
-		local newSize = getNewStackSize(currentSize)
+		local currentStackValues = {
+			TUNING.STACK_SIZE_LARGEITEM,
+			TUNING.STACK_SIZE_MEDITEM,
+			TUNING.STACK_SIZE_SMALLITEM,
+			TUNING.STACK_SIZE_TINYITEM,
+			TUNING.STACK_SIZE_PELLET,
+		}
+		for i,v in ipairs(currentStackValues) do
+			assert(type(v) == "number", "Stack config value "..tostring(i).." is not a number")
+			assert(v >= 1, "Stack config value "..tostring(i).." must be >= 1")
+		end
+		
+		local newSize = getNewStackSize(currentSize, currentStackValues)
 		if newSize == nil or newSize == currentSize then return end
 		
 		print(inst.prefab,
