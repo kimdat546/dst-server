@@ -118,7 +118,7 @@ return {
     twiggytrees_regrowth="default",
     weather="default",
     winters_feast="enabled",
-    world_size="default",
+    world_size="small",
     wormattacks="rare",
     wormattacks_boss="default",
     wormhole_prefab="tentacle_pillar",
@@ -130,7 +130,7 @@ return {
     year_of_the_catcoon="default",
     year_of_the_dragonfly="default",
     year_of_the_gobbler="default",
-    year_of_the_knight="enabled",
+    year_of_the_knight="default",
     year_of_the_pig="default",
     year_of_the_snake="default",
     year_of_the_varg="default" 
