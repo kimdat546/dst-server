@@ -118,7 +118,7 @@ return {
     twiggytrees_regrowth="default",
     weather="default",
     winters_feast="enabled",
-    world_size="default",
+    world_size="small",
     wormattacks="rare",
     wormattacks_boss="default",
     wormhole_prefab="tentacle_pillar",

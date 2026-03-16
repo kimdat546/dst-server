@@ -117,5 +117,6 @@ return {
       show_uses=-1 
     },
     enabled=true 
-  } 
+  },
+  ["workshop-378160973"]={ configuration_options={  }, enabled=true } 
 }
